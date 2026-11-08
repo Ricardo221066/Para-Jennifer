@@ -1,0 +1,176 @@
+:root {
+  --fondo: #faf6f2;
+  --texto: #3c3034;
+  --rosa: #91546a;
+  --suave: #efe3e5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: system-ui, sans-serif;
+  line-height: 1.7;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1,
+h2,
+.firma {
+  font-family: Georgia, serif;
+  font-weight: normal;
+}
+
+h1 {
+  margin: 12px 0;
+  font-size: clamp(2.8rem, 9vw, 5rem);
+  line-height: 1.1;
+}
+
+h2 {
+  margin: 10px 0 24px;
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  line-height: 1.2;
+}
+
+.portada {
+  position: relative;
+  min-height: 90svh;
+  display: grid;
+  align-items: end;
+  padding: 48px 24px;
+  color: white;
+  background: #655057;
+  isolation: isolate;
+}
+
+.portada__foto,
+.portada::after {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+}
+
+.portada__foto {
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+}
+
+.portada::after {
+  content: "";
+  background: linear-gradient(transparent, rgb(25 15 20 / 80%));
+  z-index: -1;
+}
+
+.portada__texto {
+  width: min(100%, 960px);
+  margin: 0 auto;
+}
+
+.etiqueta {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.boton {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 24px;
+  border: 1px solid rgb(255 255 255 / 65%);
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+}
+
+.boton:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 5px;
+}
+
+.seccion {
+  width: min(100%, 1000px);
+  margin: 0 auto;
+  padding: 72px 24px;
+}
+
+.carta {
+  max-width: 620px;
+  text-align: center;
+}
+
+.firma {
+  margin-top: 28px;
+  color: var(--rosa);
+  font-size: 1.3rem;
+}
+
+.recuerdos {
+  text-align: center;
+}
+
+.galeria {
+  display: grid;
+  gap: 28px;
+  margin-top: 36px;
+}
+
+.recuerdo {
+  margin: 0;
+  padding: 12px 12px 20px;
+  background: white;
+  box-shadow: 0 8px 30px rgb(60 48 52 / 6%);
+}
+
+.recuerdo img {
+  aspect-ratio: 3 / 4;
+  height: auto;
+  object-fit: cover;
+}
+
+.recuerdo figcaption {
+  padding-top: 16px;
+  font-family: Georgia, serif;
+  font-style: italic;
+  color: var(--rosa);
+}
+
+.cierre {
+  text-align: center;
+  border-top: 1px solid var(--suave);
+}
+
+.cierre span {
+  color: var(--rosa);
+  font-size: 3rem;
+}
+
+@media (min-width: 700px) {
+  .galeria {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+  }
+
+  .recuerdo:nth-child(2) {
+    margin-top: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
